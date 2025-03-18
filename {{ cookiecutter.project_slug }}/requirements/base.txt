@@ -1,0 +1,9 @@
+fastapi>=0.110.0
+uvicorn>=0.29.0
+sqlalchemy[asyncio]>=2.0.0
+pydantic-settings>=2.0.0
+asyncpg>=0.29.0; "{{ cookiecutter.database }}" == "postgres"
+aiosqlite>=0.20.0; "{{ cookiecutter.database }}" == "sqlite"
+{% if cookiecutter.use_redis == "yes" %}
+redis>=5.0.0
+{% endif %}

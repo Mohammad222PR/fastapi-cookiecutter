@@ -1,0 +1,33 @@
+{% if cookiecutter.use_docker == "yes" %}
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file: .env
+    {% if cookiecutter.database == "postgres" or cookiecutter.use_redis == "yes" %}
+    depends_on:
+      {% if cookiecutter.database == "postgres" %}- db{% endif %}
+      {% if cookiecutter.use_redis == "yes" %}- redis{% endif %}
+    {% endif %}
+  {% if cookiecutter.database == "postgres" %}
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: {{ cookiecutter.project_slug }}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  {% endif %}
+  {% if cookiecutter.use_redis == "yes" %}
+  redis:
+    image: redis:7
+    volumes:
+      - redis_data:/data
+  {% endif %}
+volumes:
+  {% if cookiecutter.database == "postgres" %}postgres_data:{% endif %}
+  {% if cookiecutter.use_redis == "yes" %}redis_data:{% endif %}
+{% endif %}

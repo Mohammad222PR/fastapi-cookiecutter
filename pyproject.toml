@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastapi-cookiecutter"
+version = "0.1.0"
+description = "A customizable Cookiecutter template for generating production-ready FastAPI projects"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Mohammad", email = "mohammades13851@gmail.com" }
+]
+license = { file = "LICENSE" }
+keywords = ["fastapi", "cookiecutter", "template", "api", "web-development", "python"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Utilities"
+]
+dependencies = [
+    "cookiecutter>=2.6.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/Mohammad222PR/fastapi-cookiecutter"
+Documentation = "https://github.com/Mohammad222PR/fastapi-cookiecutter/blob/main/README.md"
+Issues = "https://github.com/Mohammad222PR/fastapi-cookiecutter/issues"
+
+[tool.setuptools]
+license-files = ["LICENSE"]

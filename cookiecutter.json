@@ -1,0 +1,11 @@
+{
+  "project_name": "my_fastapi_project",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "author": "Your Name",
+  "version": "0.1.0",
+  "description": "A FastAPI project",
+  "database": ["postgres", "sqlite"],
+  "use_redis": ["yes", "no"],
+  "use_docker": ["yes", "no"],
+  "use_ci_cd": ["yes", "no"]
+}
