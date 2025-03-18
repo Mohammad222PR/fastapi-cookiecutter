@@ -1,33 +1,67 @@
 {% if cookiecutter.use_docker == "yes" %}
 version: '3.8'
+
 services:
-  app:
+  server:
     build: .
+    restart: on-failure
     ports:
       - "8000:8000"
     env_file: .env
+    volumes:
+      - ./:/usr/src/app
+    command: ["./scripts/wait-for-db.sh", "./scripts/run.sh"]
     {% if cookiecutter.database == "postgres" or cookiecutter.use_redis == "yes" %}
     depends_on:
-      {% if cookiecutter.database == "postgres" %}- db{% endif %}
-      {% if cookiecutter.use_redis == "yes" %}- redis{% endif %}
+      {% if cookiecutter.database == "postgres" %}
+      database:
+        condition: service_healthy
+      {% endif %}
+      {% if cookiecutter.use_redis == "yes" %}
+      redis:
+        condition: service_healthy
+      {% endif %}
     {% endif %}
   {% if cookiecutter.database == "postgres" %}
-  db:
-    image: postgres:15
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: {{ cookiecutter.project_slug }}
+  database:
+    image: postgres:16.3-alpine3.20
+    restart: always
+    env_file: .env
+    user: postgres
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - database-data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    healthcheck:
+      test: ['CMD', 'pg_isready']
+      interval: 10s
+      timeout: 5s
+      retries: 5
   {% endif %}
   {% if cookiecutter.use_redis == "yes" %}
   redis:
-    image: redis:7
+    image: redis:7.2.4
+    restart: always
     volumes:
       - redis_data:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  {% endif %}
+  {% if cookiecutter.database == "postgres" %}
+  adminer:
+    image: adminer:4.8.1
+    restart: always
+    ports:
+      - "8080:8080"
   {% endif %}
 volumes:
-  {% if cookiecutter.database == "postgres" %}postgres_data:{% endif %}
-  {% if cookiecutter.use_redis == "yes" %}redis_data:{% endif %}
+  {% if cookiecutter.database == "postgres" %}
+  database-data:
+  {% endif %}
+  {% if cookiecutter.use_redis == "yes" %}
+  redis_data:
+  {% endif %}
 {% endif %}

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fastapi-cookiecutters"
-version = "0.1.0"
+version = "0.2.1"
 description = "A customizable Cookiecutter template for generating production-ready FastAPI projects"
 readme = "DOCS.md"
 requires-python = ">=3.11"
