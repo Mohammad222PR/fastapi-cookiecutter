@@ -49,9 +49,9 @@
    ```
 2. **Generate a Project**:
    ```bash
-   cookiecutter gh:<your-username>/fastapi-cookiecutters
+   cookiecutter gh:Mohammad222PR/fastapi-cookiecutters
    ```
-   Replace `<your-username>` with your GitHub username.
+   Replace `Mohammad222PR` with your GitHub username.
 3. **Customize It**:
    Answer the prompts—name your project, pick a DB, add Docker, whatever you’re feeling.
 
@@ -62,10 +62,10 @@ Boom! Your FastAPI app is ready to roll.
 ## 🔧 Usage Examples
 ```bash
 # Basic setup (SQLite, no extras)
-cookiecutter gh:<your-username>/fastapi-cookiecutters
+cookiecutter gh:Mohammad222PR/fastapi-cookiecutters
 
 # Full power (Postgres, Docker, Redis, CI/CD)
-cookiecutter gh:<your-username>/fastapi-cookiecutters --no-input \
+cookiecutter gh:Mohammad222PR/fastapi-cookiecutters --no-input \
   project_name="MyAPI" database="postgres" use_redis="yes" use_docker="yes" use_ci_cd="yes"
 ```
 
@@ -92,7 +92,7 @@ Dig this template? Let’s make it epic!
    git commit -m "Add sick idea"
    git push origin feature/sick-idea
    ```
-5. Open a Pull Request on [GitHub](https://github.com/<your-username>/fastapi-cookiecutter/pulls)
+5. Open a Pull Request on [GitHub](https://github.com/Mohammad222PR/fastapi-cookiecutter/pulls)
 
 More details in our [Contributing Guide](CONTRIBUTING.md)!
 
@@ -104,8 +104,8 @@ FastAPI Cookiecutter rocks the [MIT License](LICENSE). Use it, tweak it, share i
 ---
 
 ## 🌟 Show Your Support
-- ⭐ Star us on [GitHub](https://github.com/<your-username>/fastapi-cookiecutter)!
-- 🐛 Drop bugs or ideas in [Issues](https://github.com/<your-username>/fastapi-cookiecutter/issues).
+- ⭐ Star us on [GitHub](https://github.com/Mohammad222PR/fastapi-cookiecutter)!
+- 🐛 Drop bugs or ideas in [Issues](https://github.com/Mohammad222PR/fastapi-cookiecutter/issues).
 - 💬 Tell us how you’re using it—hit us up!
 
 ---
