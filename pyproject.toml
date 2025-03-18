@@ -3,10 +3,10 @@ requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "fastapi-cookiecutter"
+name = "fastapi-cookiecutters"
 version = "0.1.0"
 description = "A customizable Cookiecutter template for generating production-ready FastAPI projects"
-readme = "README.md"
+readme = "DOCS.md"
 requires-python = ">=3.11"
 authors = [
     { name = "Mohammad", email = "mohammades13851@gmail.com" }

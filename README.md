@@ -6,10 +6,10 @@
 
 <div align="center">
 
-[![Stars](https://img.shields.io/github/stars/<your-username>/fastapi-cookiecutter?logo=starship&color=gold)](https://github.com/<your-username>/fastapi-cookiecutter/stargazers)
-[![Forks](https://img.shields.io/github/forks/<your-username>/fastapi-cookiecutter?logo=git&color=9cf)](https://github.com/<your-username>/fastapi-cookiecutter/forks)
-[![Issues](https://img.shields.io/github/issues/<your-username>/fastapi-cookiecutter?logo=github&color=red)](https://github.com/<your-username>/fastapi-cookiecutter/issues)
-[![License](https://img.shields.io/github/license/<your-username>/fastapi-cookiecutter?logo=open-source-initiative&color=green)](https://github.com/<your-username>/fastapi-cookiecutter/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/Mohammad222PR/fastapi-cookiecutter?logo=starship&color=gold)](https://github.com/Mohammad222PR/fastapi-cookiecutter/stargazers)
+[![Forks](https://img.shields.io/github/forks/Mohammad222PR/fastapi-cookiecutter?logo=git&color=9cf)](https://github.com/Mohammad222PR/fastapi-cookiecutter/forks)
+[![Issues](https://img.shields.io/github/issues/Mohammad222PR/fastapi-cookiecutter?logo=github&color=red)](https://github.com/Mohammad222PR/fastapi-cookiecutter/issues)
+[![License](https://img.shields.io/github/license/Mohammad222PR/fastapi-cookiecutter?logo=open-source-initiative&color=green)](https://github.com/Mohammad222PR/fastapi-cookiecutter/blob/main/LICENSE)
 
 </div>
 
@@ -49,7 +49,7 @@
    ```
 2. **Generate a Project**:
    ```bash
-   cookiecutter gh:<your-username>/fastapi-cookiecutter
+   cookiecutter gh:<your-username>/fastapi-cookiecutters
    ```
    Replace `<your-username>` with your GitHub username.
 3. **Customize It**:
@@ -62,10 +62,10 @@ Boom! Your FastAPI app is ready to roll.
 ## 🔧 Usage Examples
 ```bash
 # Basic setup (SQLite, no extras)
-cookiecutter gh:<your-username>/fastapi-cookiecutter
+cookiecutter gh:<your-username>/fastapi-cookiecutters
 
 # Full power (Postgres, Docker, Redis, CI/CD)
-cookiecutter gh:<your-username>/fastapi-cookiecutter --no-input \
+cookiecutter gh:<your-username>/fastapi-cookiecutters --no-input \
   project_name="MyAPI" database="postgres" use_redis="yes" use_docker="yes" use_ci_cd="yes"
 ```
 
@@ -78,7 +78,7 @@ Dig this template? Let’s make it epic!
 1. Fork it 🍴
 2. Clone it:
    ```bash
-   git clone https://github.com/<your-username>/fastapi-cookiecutter.git
+   git clone https://github.com/Mohammad222PR/fastapi-cookiecutter.git
    cd fastapi-cookiecutter
    pip install -r requirements.txt
    ```
